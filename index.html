@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mmmr.casual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .whatsapp { color: #25D366; }
+        .tiktok { color: #000000; }
+        .instagram { 
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .shopee { color: #EE4D2D; }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+    <div class="max-w-lg w-full">
+        <div class="card p-8 text-center mx-auto">
+            <!-- Logo/Nama Website -->
+            <h1 class="text-4xl font-bold mb-6 text-white">Hallo Lads</h1>
+            <p class="text-gray-200 mb-8">SELAMAT DATANG Lads MMMR.CASUAL </p>
+            
+            <!-- Social Media Links -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6282126064796" target="_blank" class="card p-6 flex flex-col items-center justify-center">
+                    <i class="fab fa-whatsapp social-icon whatsapp text-5xl mb-3"></i>
+                    <h3 class="text-white font-semibold">WhatsApp</h3>
+                    <p class="text-gray-300 text-sm mt-1">Chat with us</p>
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@mmmr.casual" target="_blank" class="card p-6 flex flex-col items-center justify-center">
+                    <i class="fab fa-tiktok social-icon tiktok text-5xl mb-3"></i>
+                    <h3 class="text-white font-semibold">TikTok</h3>
+                    <p class="text-gray-300 text-sm mt-1">Follow our TikTok</p>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/mmmr.casual" target="_blank" class="card p-6 flex flex-col items-center justify-center">
+                    <i class="fab fa-instagram social-icon instagram text-5xl mb-3"></i>
+                    <h3 class="text-white font-semibold">Instagram</h3>
+                    <p class="text-gray-300 text-sm mt-1">Follow our Instagram</p>
+                </a>
+                
+                <!-- Shopee -->
+                <a href="https://shopee.co.id/makymiftahurohmat" target="_blank" class="card p-6 flex flex-col items-center justify-center">
+                    <i class="fas fa-shopping-bag social-icon shopee text-5xl mb-3"></i>
+                    <h3 class="text-white font-semibold">Shopee</h3>
+                    <p class="text-gray-300 text-sm mt-1">Visit our Shop</p>
+                </a>
+            </div>
+            
+            <!-- Footer -->
+            <div class="mt-8 pt-6 border-t border-gray-300 border-opacity-30">
+                <p class="text-gray-300 text-sm">© since MMXXV mmmr.casual - All rights reserved</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Optional animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+        
+        // Track clicks on social links
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function() {
+                const platform = this.querySelector('h3').textContent;
+                console.log(`Navigating to ${platform}`);
+            });
+        });
+    </script>
+</body>
+</html>
